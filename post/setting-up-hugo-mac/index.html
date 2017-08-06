@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <title>Hugoの設定とgithub.pagesの公開</title>
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+
+<link rel="stylesheet" href="https://hrpdev.github.io/css/bootstrap.min.css">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://hrpdev.github.io/css/font-awesome.min.css">
+
+<link href="https://hrpdev.github.io/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+<link href="https://hrpdev.github.io/css/custom.css" rel="stylesheet">
+<link href="https://hrpdev.github.io/css/manni.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://hrpdev.github.io/img/favicon.png">
+
+
+</head>
+  <body>
+    <div id="root">
+      <div class="container-fluid">
+        <div class="row site-header">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12 top-navigation">
+                <div class="row">
+  <div class="col-sm-6">
+    <div class="categories-block">
+      <a href="" class="track-categories">//</a>
+      
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="social-media-block">
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+    </div>
+  </div>
+</div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-10 header col-md-offset-1">
+                <div class="row">
+  <div class="col-md-6">
+    <div class="title-info">
+      
+      <a href=""> My New Hugo Site </a>
+      
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="menu">
+      <a href="https://hrpdev.github.io/">Home /</a>
+      
+      
+      <a href="https://hrpdev.github.io/0">0 / </a>
+      
+      
+    </div>
+  </div>
+
+</div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 main-content col-md-offset-1">
+            
+
+<div class="col-md-12 entry">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="entry-meta">
+        August 17
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="entry-header">
+       Hugoの設定とgithub.pagesの公開
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="entry-sidebar">
+        <div class="entry-sidebar-title">CATEGORIES</div>
+        
+
+        <div class="entry-sidebar-title">Tags</div>
+        
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="entry-content">
+        
+
+<h1 id="1-hugoの設定">1.hugoの設定</h1>
+
+<h3 id="hugoとは">hugoとは</h3>
+
+<p>go言語製サイトジェネレーター。</p>
+
+<h3 id="homebrewのインストール">homebrewのインストール</h3>
+
+<p>まずはhomebrewのインストールが必要。既に入ってるいる人は飛ばしてください。homebrewとはMacにソフトウェアやライブラリをインストールするパッケージ管理システム。<span style="color:red"><a href="https://brew.sh/">homebrew</a></span>サイト内にある以下のテキストをterminalにペースト。</p>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>/usr/bin/ruby -e <span style="color: #CC3300">&quot;</span><span style="color: #006699; font-weight: bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color: #006699; font-weight: bold">)</span><span style="color: #CC3300">&quot;</span>
+</pre></div>
+
+<h3 id="hugoのインストール">hugoのインストール</h3>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>$ brew update
+$ brew install hugo
+</pre></div>
+
+<p>ついでにbrewをアップデート</p>
+
+<h3 id="新規サイト構築">新規サイト構築</h3>
+
+<p>下記のコマンドを入力すると雛形が生成されます。</p>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>$ hugo new site my-site<span style="color: #555555">(</span>お好きなサイト名<span style="color: #555555">)</span>
+
+my-site
+|-config.toml
+|-archetypes
+|-content
+|-data
+|-layouts
+|-public
+|-static
+|-themes
+</pre></div>
+
+<p>ディレクトリ内を軽く説明</p>
+
+<p>・archetypesは各ジャンルの雛形を入れるフォルダです。サイト作成時にdefault.mdファイルが生成されて書く記事に日付などをつけてくれるようになっています。</p>
+
+<p>・contentは各ジャンルの記事を入れておくフォルダです。</p>
+
+<p>・dataは様々なデータ入れて置くところです。（そのままです笑）</p>
+
+<p>・layoutsはheaderやfotterなどの共通htmlファイルを入れて置く場所です。</p>
+
+<p>・publicはビルドされファイルの出力先です。</p>
+
+<p>・staticはcssや画像ファイルを入れて置く場所です。</p>
+
+<p>・themesはHugoのテーマを入れて置く場所です。</p>
+
+<p>この状態ではプレビューしても何も出ませんのでひとまずテーマを設定します。</p>
+
+<h3 id="テーマの設定">テーマの設定</h3>
+
+<p>ひとまずthemesフォルダに移動
+以下のコマンドでおそらく全テーマがローカルにクローンされる</p>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>$ git clone https://github.com/dim0627/hugo_theme_robust.git
+</pre></div>
+
+<p>ひとつのテーマだけをインストールしたい人は<span style="color:red"><a href="https://themes.gohugo.io/">hugo themes</a></span>にお洒落なテーマが沢山あるのでテーマクリック→homepageクリック→gitのclone or downloadボタンにあるコードをコピペ</p>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>$ git clone <span style="color: #555555">(</span>コピペしたコードを貼り付け<span style="color: #555555">)</span>
+</pre></div>
+
+<p>インストールしたテーマを反映させるためにはconfig.tomlに下記を追加。テーマ名はthemesフォルダ直下にできたフォルダ名。</p>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #003333">theme</span><span style="color: #555555">=</span><span style="color: #CC3300">&quot;テーマ名&quot;</span>
+</pre></div>
+
+<p>これでserveすると選んだテーマが反映されます。</p>
+
+<h3 id="記事の作成">記事の作成</h3>
+
+<p>hugoの記事はマークダウン記法で書いていきます。</p>
+
+<pre><code>$hugo new post/test.md
+</code></pre>
+
+<p>test.mdという記事がcontent/postのフォルダ内に生成されます。</p>
+
+<h3 id="ローカルプレビュー">ローカルプレビュー</h3>
+
+<p>watch機能が付いているので変更内容がすぐに反映されます。</p>
+
+<pre><code>$ hugo serve -watch
+</code></pre>
+
+<h3 id="ビルド">ビルド</h3>
+
+<p>下記コマンドを実行するだけ。</p>
+<div class="highlight" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>$ <span style="color: #336666">cd</span> my-site　//サイトディレクトリに移動
+$ hugo //ビルドされ結果をpublicフォルダに出力
+</pre></div>
+
+<h1 id="2-githubで公開">2.githubで公開</h1>
+
+<h3 id="流れ">流れ</h3>
+
+<p>1.githubのアカウントを作る</p>
+
+<p>2.リモートリポジトリの作成</p>
+
+<p>3.ローカルリポジトリの作成</p>
+
+<p>4.ローカルリポジトリで作成したファイルなどをリモートリポジトリにpushして公開</p>
+
+<h3 id="githubとは">githubとは</h3>
+
+<p>githubとはソースコードのバージョン管理サービス。</p>
+
+<h3 id="githubのアカウント登録">githubのアカウント登録</h3>
+
+<p><span style="red"><a href="https://github.com/">githubのトップページ</a></span>でユーザー名とメールアドレス、パスワードを入力してアカウント登録をしてください。有料プランもありますがひとまず無料プランを選択。登録したアドレスに送られてくるメールから認証を行いユーザー登録完了です。</p>
+
+<h3 id="リポジトリの作成">リポジトリの作成</h3>
+
+<p>New repositoryボタンをクリックして、リポジトリ名を入力して作成。無料プランでは全て公開になります。
+この時リポジトリ名は</p>
+
+<p>&ldquo;アカウント名.github.io&rdquo;という風にして置かないと公開されません。</p>
+
+<h3 id="ローカルリポジトリの作成とリモートリポジトリとの紐付け">ローカルリポジトリの作成とリモートリポジトリとの紐付け</h3>
+
+<p>hugoの場合はサイト名/publicフォルダにビルドした内容が出力されるのでpublicフォルダ内で作成してあげる必要があります。
+下記のコマンドを実行します。</p>
+
+<pre><code>$ git init //ローカルリポジトリの作成
+</code></pre>
+
+<p>紐付けは下記のコマンドを実行。</p>
+
+<pre><code>$ git remote add origin https://github.com/アカウント名/リポジトリ名
+</code></pre>
+
+<h3 id="hugoで作成したサイトをローカルリポジトリに追加">hugoで作成したサイトをローカルリポジトリに追加</h3>
+
+<pre><code>$ git add -all
+</code></pre>
+
+<p>-allで全て追加ファイル単位の場合は、-allをファイル名にしてあげるとおk。</p>
+
+<h3 id="ローカルリポジトリにcommit">ローカルリポジトリにcommit</h3>
+
+<p>コミットはローカルリポジトリに追加・更新などの変更記録を残すこと。</p>
+
+<pre><code>$ git commit -m&quot;first commit&quot;
+</code></pre>
+
+<h3 id="最後にリモートリポジトリへプッシュして記事公開">最後にリモートリポジトリへプッシュして記事公開</h3>
+
+<pre><code>$ git push origin master
+</code></pre>
+
+<p>上記のコマンドを実行して、ブラウザの検索窓にアカウント名.github.ioを入力すると公開されているはずです。</p>
+
+<p>ここまでやってしまうと、次回からは</p>
+
+<p>1.記事作成やレイアウト変更</p>
+
+<p>2.ビルドする</p>
+
+<p>3.ローカルリポジトリに変更をaddしてcommitする</p>
+
+<p>4.リモートリポジトリにpushして公開</p>
+
+<p>という簡単手順で更新作業が行えるようになります。</p>
+
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+  
+
+</div>
+
+          </div>
+        </div>
+        <div class="row site-footer">
+          <div class="col-md-12">
+            <div class="row">
+  <div class="col-md-12 footer-title">
+    <h2>
+      
+      <a href=""> My New Hugo Site </a>
+      
+    </h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 footer-menu">
+      <a href="https://hrpdev.github.io/">Home /</a>
+      
+      
+      <a href="https://hrpdev.github.io/0">0 / </a>
+      
+      
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="social-media-block-footer">
+      
+      
+      
+      
+      
+      
+      
+      
+
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://hrpdev.github.io/js/jquery.min.js"></script>
+<script src="https://hrpdev.github.io/js/bootstrap.min.js"></script>
+<script src="https://hrpdev.github.io/js/jquery.cookie.js"> </script>
+<script src="https://hrpdev.github.io/js/ekko-lightbox.js"></script>
+<script src="https://hrpdev.github.io/js/jquery.scrollTo.min.js"></script>
+<script src="https://hrpdev.github.io/js/masonry.pkgd.min.js"></script>
+<script src="https://hrpdev.github.io/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://hrpdev.github.io/js/owl.carousel.min.js"></script>
+<script src="https://hrpdev.github.io/js/front.js"></script>
+
+  </body>
+</html>

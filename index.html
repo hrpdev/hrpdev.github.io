@@ -20,6 +20,7 @@
 <link href="https://hrpdev.github.io/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
 <link href="https://hrpdev.github.io/css/custom.css" rel="stylesheet">
+<link href="https://hrpdev.github.io/css/manni.css" rel="stylesheet">
 <link rel="shortcut icon" href="https://hrpdev.github.io/img/favicon.png">
 
 <link href="https://hrpdev.github.io/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
@@ -102,6 +103,44 @@
   </div>
 </div>
 
+
+<div class="row content">
+  
+  <div class="col-sm-12 content-excerpt">
+  
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row content-date">
+          August 17
+        </div>
+        <div class="row content-title">
+          <h2> <a href="https://hrpdev.github.io/post/setting-up-hugo-mac/ "> Hugoの設定とgithub.pagesの公開 </a> </h2>
+        </div>
+        <div class="row content-summary">
+          1.hugoの設定 hugoとは go言語製サイトジェネレーター。
+homebrewのインストール まずはhomebrewのインストールが必要。既に入ってるいる人は飛ばしてください。homebrewとはMacにソフトウェアやライブラリをインストールするパッケージ管理システム。homebrewサイト内にある以下のテキストをterminalにペースト。
+/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;  hugoのインストール $ brew update $ brew install hugo  ついでにbrewをアップデート
+新規サイト構築 下記のコマンドを入力すると雛形が生成されます。
+$ hugo new site my-site(お好きなサイト名) my-site |-config.toml |-archetypes |-content |-data |-layouts |-public |-static |-themes  ディレクトリ内を軽く説明
+・archetypesは各ジャンルの雛形を入れるフォルダです。サイト作成時にdefault.mdファイルが生成されて書く記事に日付などをつけてくれるようになっています。
+・contentは各ジャンルの記事を入れておくフォルダです。
+・dataは様々なデータ入れて置くところです。（そのままです笑）
+・layoutsはheaderやfotterなどの共通htmlファイルを入れて置く場所です。
+・publicはビルドされファイルの出力先です。
+・staticはcssや画像ファイルを入れて置く場所です。
+・themesはHugoのテーマを入れて置く場所です。
+この状態ではプレビューしても何も出ませんのでひとまずテーマを設定します。
+テーマの設定 ひとまずthemesフォルダに移動 以下のコマンドでおそらく全テーマがローカルにクローンされる
+$ git clone https://github.com/dim0627/hugo_theme_robust.git  ひとつのテーマだけをインストールしたい人はhugo themesにお洒落なテーマが沢山あるのでテーマクリック→homepageクリック→gitのclone or downloadボタンにあるコードをコピペ
+$ git clone (コピペしたコードを貼り付け)  インストールしたテーマを反映させるためにはconfig.tomlに下記を追加。テーマ名はthemesフォルダ直下にできたフォルダ名。
+theme=&quot;テーマ名&quot;  これでserveすると選んだテーマが反映されます。
+記事の作成 hugoの記事はマークダウン記法で書いていきます。
+          <a class="more-link" href="https://hrpdev.github.io/post/setting-up-hugo-mac/ ">Read the post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="row content">
   

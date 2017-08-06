@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hrpdev.github.io/post/setting-up-hugo-mac/</loc>
+    <lastmod>2017-08-06T00:43:02+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hrpdev.github.io/post/hoge/</loc>
     <lastmod>2017-08-05T21:38:38+09:00</lastmod>
   </url>
@@ -14,13 +19,13 @@
   
   <url>
     <loc>https://hrpdev.github.io/</loc>
-    <lastmod>2017-08-05T21:38:38+09:00</lastmod>
+    <lastmod>2017-08-06T00:43:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hrpdev.github.io/post/</loc>
-    <lastmod>2017-08-05T21:38:38+09:00</lastmod>
+    <lastmod>2017-08-06T00:43:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
