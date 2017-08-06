@@ -37,14 +37,5 @@ theme=&amp;quot;テーマ名&amp;quot;  これでserveすると選んだテー�
 記事の作成 hugoの記事はマークダウン記法で書いていきます。</description>
     </item>
     
-    <item>
-      <title>Hoge</title>
-      <link>https://hrpdev.github.io/post/hoge/</link>
-      <pubDate>Sat, 05 Aug 2017 21:38:38 +0900</pubDate>
-      
-      <guid>https://hrpdev.github.io/post/hoge/</guid>
-      <description>HEllOW WORLD</description>
-    </item>
-    
   </channel>
 </rss>
